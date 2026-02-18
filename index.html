@@ -12,32 +12,6 @@ padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
-<a href="https://wa.me/919286010430?text=Hello%20I%20want%20to%20book%20Taj%20Mahal%20Tour"
-class="whatsapp-float" target="_blank">
-💬 Chat on WhatsApp
-</a>
-
-<style>
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:14px 22px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-font-family:Poppins, sans-serif;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-z-index:1000;
-transition:0.3s;
-}
-.whatsapp-float:hover{
-background:#128C7E;
-transform:scale(1.05);
-}
-</style>
 
 body{
 background:#111;
@@ -78,6 +52,7 @@ text-decoration:none;
 font-weight:600;
 border-radius:30px;
 transition:0.3s;
+display:inline-block;
 }
 
 .btn:hover{
@@ -142,6 +117,27 @@ margin-top:50px;
 font-size:14px;
 color:#aaa;
 }
+
+/* Floating WhatsApp */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+z-index:1000;
+transition:0.3s;
+}
+
+.whatsapp-float:hover{
+background:#128C7E;
+transform:scale(1.05);
+}
 </style>
 </head>
 
@@ -150,7 +146,9 @@ color:#aaa;
 <div class="hero">
 <h1>Ali Tour India</h1>
 <p>Premium Taj Mahal & Agra Private Tours for International Travelers</p>
-<a class="btn" href="https://wa.me/919000000000">Book on WhatsApp</a>
+<a class="btn" href="https://wa.me/919286010430?text=Hello%20I%20want%20to%20book%20Taj%20Mahal%20Tour" target="_blank">
+Book on WhatsApp
+</a>
 </div>
 
 <div class="section">
@@ -163,12 +161,14 @@ color:#aaa;
 <div class="price">$135 Per Person</div>
 <ul>
 <li>✔ Private AC Car</li>
-<li>✔ English Guide</li>
-<li>✔ Taj Mahal Ticket</li>
+<li>✔ English Speaking Guide</li>
+<li>✔ Taj Mahal Entry Ticket</li>
 <li>✔ Agra Fort Visit</li>
 <li>✔ Lunch Included</li>
 </ul>
-<a class="btn" href="https://wa.me/919000000000">Book Now</a>
+<a class="btn" href="https://wa.me/919286010430?text=I%20want%20to%20book%201%20Day%20Taj%20Mahal%20Tour" target="_blank">
+Book Now
+</a>
 </div>
 
 <div class="card">
@@ -181,7 +181,9 @@ color:#aaa;
 <li>✔ Breakfast Included</li>
 <li>✔ No Hidden Charges</li>
 </ul>
-<a class="btn" href="https://wa.me/919000000000">Book Now</a>
+<a class="btn" href="https://wa.me/919286010430?text=I%20want%20to%20book%202%20Days%20Agra%20Tour" target="_blank">
+Book Now
+</a>
 </div>
 
 </div>
@@ -189,8 +191,14 @@ color:#aaa;
 
 <footer>
 Ali Tour India | Agra, India <br>
-Email: info@alitourindia.com
+WhatsApp: +91 9286010430
 </footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919286010430?text=Hello%20I%20am%20interested%20in%20your%20tour%20packages" 
+class="whatsapp-float" target="_blank">
+💬 Chat With Us
+</a>
 
 </body>
 </html>
