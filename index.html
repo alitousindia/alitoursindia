@@ -1,195 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali Tours India | Agra Tour Packages with Online Booking</title>
-  <meta name="description" content="Book real Agra tour packages with Taj Mahal, Agra Red Fort, Mehtab Bagh and Mini Taj. Choose package, select monuments, and pay online securely.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Tours India | Complete Agra Tour Booking Website</title>
+  <meta name="description" content="Complete Agra tour booking website with Taj Mahal, Agra Red Fort, Mehtab Bagh and Mini Taj packages. Choose package, choose monuments, and pay online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --brand: #f59e0b;
-      --brand-dark: #d97706;
-      --ink: #0f172a;
+      --brand-dark: #b45309;
+      --text: #0f172a;
       --muted: #64748b;
       --bg: #f8fafc;
-      --card: #ffffff;
-      --shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
+      --panel: #ffffff;
+      --night: #0f172a;
+      --shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
+      --radius: 16px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    .container { width: min(1140px, 92%); margin: 0 auto; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1150px, 92%); margin: 0 auto; }
 
     .hero {
-      color: #fff;
       min-height: 92vh;
-      padding: 2rem 0;
-      background:
-        linear-gradient(110deg, rgba(15, 23, 42, 0.84), rgba(15, 23, 42, 0.48)),
-        url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=80') center/cover;
+      color: #fff;
       display: grid;
       align-items: center;
+      padding: 28px 0;
+      background:
+        linear-gradient(110deg, rgba(15, 23, 42, 0.86), rgba(15, 23, 42, 0.53)),
+        url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1800&q=80') center/cover;
     }
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 3rem;
-    }
-
-    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
-    .logo-badge {
-      width: 52px; height: 52px; border-radius: 12px;
+    .topbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
+    .logo { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+    .badge {
+      width: 54px; height: 54px; border-radius: 12px;
       display: grid; place-items: center;
-      font-weight: 800; font-size: 1.2rem;
-      color: #7c2d12;
+      font-weight: 800; color: #7c2d12; font-size: 1.2rem;
       background: linear-gradient(135deg, #fde68a, #f59e0b);
       box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
     }
-    .logo span { font-weight: 700; display: block; }
-    .logo small { font-size: 0.8rem; opacity: .9; }
-
-    .top-contact {
-      background: rgba(255, 255, 255, .16);
-      border: 1px solid rgba(255, 255, 255, .25);
-      border-radius: 999px;
+    .logo-title { font-weight: 700; }
+    .logo-sub { opacity: .9; font-size: .82rem; }
+    .contact-pill {
       padding: .55rem 1rem;
-      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, .14);
       font-size: .9rem;
     }
 
-    .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2rem; align-items: center; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.2; margin-bottom: .9rem; }
-    .hero p { color: #e2e8f0; margin-bottom: 1.4rem; max-width: 640px; }
-
-    .btn { border: 0; border-radius: 999px; padding: .8rem 1.35rem; text-decoration: none; font-weight: 600; cursor: pointer; display: inline-block; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+    h1 { font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.2; margin-bottom: .9rem; }
+    .lead { max-width: 670px; color: #dbeafe; margin-bottom: 1.3rem; }
+    .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn {
+      border: 0; border-radius: 999px; padding: .8rem 1.3rem;
+      text-decoration: none; cursor: pointer; font: inherit; font-weight: 600;
+      transition: .2s ease;
+    }
     .btn-primary { background: var(--brand); color: #111827; }
     .btn-primary:hover { background: #fbbf24; }
-    .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,.45); color: #fff; }
+    .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .45); }
 
-    .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
-
-    .hero-panel {
+    .hero-card {
+      padding: 18px;
+      border-radius: var(--radius);
       background: rgba(15, 23, 42, .58);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 18px;
-      padding: 1.1rem;
+      border: 1px solid rgba(255, 255, 255, .2);
     }
+    .hero-card ul { list-style: none; display: grid; gap: .45rem; font-size: .95rem; }
 
-    .hero-panel ul { list-style: none; display: grid; gap: .4rem; color: #f8fafc; font-size: .95rem; }
+    section { padding: 70px 0; }
+    .title { text-align: center; margin-bottom: 28px; }
+    .title h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); margin-bottom: .4rem; }
+    .title p { color: var(--muted); max-width: 780px; margin: 0 auto; }
 
-    section { padding: 4.3rem 0; }
-    .section-title { text-align: center; margin-bottom: 2rem; }
-    .section-title h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin-bottom: .45rem; }
-    .section-title p { color: var(--muted); max-width: 760px; margin: 0 auto; }
-
-    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 
     .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 1rem;
+      background: var(--panel);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      border: 1px solid #e5e7eb;
+      border: 1px solid #e2e8f0;
+      padding: 14px;
       display: flex;
       flex-direction: column;
-      gap: .8rem;
+      gap: 10px;
     }
 
-    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; }
-    .chip { width: fit-content; padding: .2rem .65rem; border-radius: 999px; font-size: .78rem; font-weight: 700; background: #fff7ed; color: #b45309; }
-    .price { font-size: 1.4rem; font-weight: 800; display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
-    .usd { font-size: .95rem; color: var(--muted); font-weight: 600; }
-    .card ul { list-style: none; color: #475569; font-size: .93rem; display: grid; gap: .25rem; }
+    .card img { height: 185px; object-fit: cover; border-radius: 12px; }
+    .chip { width: fit-content; border-radius: 999px; padding: .2rem .65rem; font-size: .78rem; font-weight: 700; background: #fff7ed; color: var(--brand-dark); }
+    .price { font-weight: 800; font-size: 1.35rem; display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
+    .usd { color: var(--muted); font-size: .95rem; font-weight: 600; }
+    .card ul { list-style: none; display: grid; gap: .28rem; color: #475569; font-size: .93rem; }
 
-    .monument-card img { height: 170px; }
-    .monument-card p { font-size: .88rem; color: #475569; }
+    .monument-card img { height: 165px; }
+    .monument-card p { color: #475569; font-size: .9rem; }
 
-    .booking { background: #0f172a; color: #f8fafc; }
-    .booking-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 1.5rem; }
-    .booking-card {
+    .booking { background: var(--night); color: #f8fafc; }
+    .booking-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 20px; }
+    .panel {
+      border: 1px solid rgba(255, 255, 255, .2);
       background: rgba(255, 255, 255, .06);
-      border: 1px solid rgba(255, 255, 255, .16);
       border-radius: 14px;
-      padding: 1rem;
+      padding: 16px;
     }
 
     form { display: grid; gap: .75rem; }
     input, select, textarea {
-      width: 100%;
-      border: 1px solid #d1d5db;
+      width: 100%; padding: .78rem .84rem; border-radius: 10px;
+      border: 1px solid #cbd5e1; font: inherit;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+
+    .picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; margin-top: .35rem; }
+    .picker label {
+      display: flex; gap: .45rem; align-items: center;
+      border: 1px solid rgba(255, 255, 255, .2);
       border-radius: 10px;
-      padding: .75rem .85rem;
-      font: inherit;
-    }
-    textarea { min-height: 85px; resize: vertical; }
-
-    .monuments-picker {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: .55rem;
-      margin-top: .35rem;
-    }
-
-    .monuments-picker label {
-      display: flex;
-      align-items: center;
-      gap: .45rem;
-      font-size: .9rem;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 9px;
       padding: .45rem .55rem;
+      background: rgba(255,255,255,.04);
+      font-size: .9rem;
       cursor: pointer;
     }
 
-    .booking-summary {
-      font-size: .9rem;
-      color: #cbd5e1;
-      background: rgba(148, 163, 184, 0.15);
+    .summary {
       border-radius: 10px;
       padding: .65rem .75rem;
+      background: rgba(148, 163, 184, .16);
+      color: #cbd5e1;
+      font-size: .9rem;
     }
 
-    .description-box {
-      margin-top: 1rem;
-      color: #dbeafe;
-      font-size: .93rem;
-      border-left: 3px solid var(--brand);
-      padding-left: .8rem;
+    .error { color: #fecaca; font-size: .85rem; display: none; }
+
+    .about {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      color: #334155;
     }
 
-    footer { background: #020617; color: #cbd5e1; text-align: center; padding: 1.2rem; }
-
+    footer { background: #020617; color: #cbd5e1; text-align: center; padding: 18px; }
     .whatsapp {
       position: fixed; right: 20px; bottom: 20px;
-      width: 54px; height: 54px; border-radius: 50%;
+      width: 56px; height: 56px; border-radius: 50%;
       display: grid; place-items: center;
-      text-decoration: none; font-size: 1.35rem;
-      color: #fff; background: #22c55e;
-      box-shadow: 0 8px 22px rgba(34,197,94,.45);
-      z-index: 40;
+      text-decoration: none; color: #fff; font-size: 1.4rem;
+      background: #22c55e;
+      box-shadow: 0 8px 20px rgba(34, 197, 94, .45);
+      z-index: 90;
     }
 
     @media (max-width: 980px) {
       .hero-grid, .grid-3, .grid-4, .booking-wrap { grid-template-columns: 1fr; }
-      .hero { min-height: auto; padding-bottom: 3.5rem; }
-      .monuments-picker { grid-template-columns: 1fr; }
+      .picker { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
     }
   </style>
 </head>
@@ -197,31 +175,32 @@
   <header class="hero">
     <div class="container">
       <div class="topbar">
-        <a href="#" class="logo">
-          <div class="logo-badge">AT</div>
+        <a href="#" class="logo" aria-label="Ali Tours India home">
+          <div class="badge">AT</div>
           <div>
-            <span>Ali Tours India</span>
-            <small>Real Agra Local Experience</small>
+            <div class="logo-title">Ali Tours India</div>
+            <div class="logo-sub">Complete Agra Tour Booking</div>
           </div>
         </a>
-        <div class="top-contact">📞 +91 92860 10430</div>
+        <div class="contact-pill">📞 +91 92860 10430</div>
       </div>
 
       <div class="hero-grid">
         <div>
-          <h1>Agra Tour Package with Real Monument Experience</h1>
-          <p>Choose package, choose monuments, and make secure online payment. Perfect for families, couples, and international tourists visiting Taj City.</p>
-          <div class="hero-actions">
-            <a href="#packages" class="btn btn-primary">Choose Package</a>
-            <a href="#booking" class="btn btn-outline">Book & Pay Now</a>
+          <h1>Complete Agra Tour Website with Real Booking Flow</h1>
+          <p class="lead">Customer can choose package, choose monuments (Taj Mahal, Agra Red Fort, Mehtab Bagh, Mini Taj), then complete booking and payment in one place.</p>
+          <div class="actions">
+            <a href="#packages" class="btn btn-primary">View Packages</a>
+            <a href="#booking" class="btn btn-secondary">Book & Pay</a>
           </div>
         </div>
-        <aside class="hero-panel">
+
+        <aside class="hero-card">
           <ul>
-            <li>✔ Taj Mahal, Agra Red Fort, Mehtab Bagh, Mini Taj covered</li>
-            <li>✔ Local guide + clean AC car + support team</li>
-            <li>✔ Live WhatsApp confirmation within minutes</li>
-            <li>✔ Razorpay payment (UPI/Card/Net Banking)</li>
+            <li>✔ Real package combinations with monument options</li>
+            <li>✔ INR + USD pricing for domestic and international visitors</li>
+            <li>✔ Secure Razorpay checkout integration</li>
+            <li>✔ WhatsApp assistance after booking confirmation</li>
           </ul>
         </aside>
       </div>
@@ -230,49 +209,49 @@
 
   <section id="packages">
     <div class="container">
-      <div class="section-title">
+      <div class="title">
         <h2>Agra Tour Packages</h2>
-        <p>All package options include monument entry planning and expert support. INR + USD shown for quick understanding.</p>
+        <p>Select from complete one-day and two-day experiences. Payment is charged in INR; USD price is approximate reference.</p>
       </div>
 
       <div class="grid-3">
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80" alt="Taj Mahal and Agra day tour">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80" alt="Classic Agra package including Taj Mahal" />
           <div class="chip">Best Seller</div>
           <h3>Classic Agra Highlights</h3>
           <p class="price">₹5,499 <span class="usd">(US$66)</span></p>
           <ul>
             <li>• Taj Mahal + Agra Red Fort + Mehtab Bagh</li>
-            <li>• Private AC car + licensed guide</li>
-            <li>• Pickup & drop Delhi / Agra</li>
+            <li>• Private AC car + expert guide</li>
+            <li>• Hotel / station pickup and drop</li>
           </ul>
-          <button class="btn btn-primary" onclick="payNow(5499, 'Classic Agra Highlights')">Book & Pay</button>
+          <button class="btn btn-primary" type="button" onclick="payNow(5499, 'Classic Agra Highlights')">Book & Pay</button>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80" alt="Sunrise taj mahal and mini taj tour">
-          <div class="chip">Sunrise Choice</div>
+          <img src="https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1200&q=80" alt="Sunrise Taj and mini taj package" />
+          <div class="chip">Photography Favorite</div>
           <h3>Sunrise + Mini Taj Tour</h3>
           <p class="price">₹6,499 <span class="usd">(US$78)</span></p>
           <ul>
             <li>• Taj sunrise + Mini Taj + Mehtab Bagh</li>
-            <li>• Photography friendly timings</li>
-            <li>• Breakfast + premium guide assistance</li>
+            <li>• Priority morning itinerary</li>
+            <li>• Breakfast and local support</li>
           </ul>
-          <button class="btn btn-primary" onclick="payNow(6499, 'Sunrise + Mini Taj Tour')">Book & Pay</button>
+          <button class="btn btn-primary" type="button" onclick="payNow(6499, 'Sunrise + Mini Taj Tour')">Book & Pay</button>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1200&q=80" alt="Luxury Agra complete monument tour">
-          <div class="chip">Complete Tour</div>
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80" alt="Royal complete Agra two day package" />
+          <div class="chip">Complete 2-Day Plan</div>
           <h3>Royal Complete Agra (2 Days)</h3>
           <p class="price">₹10,999 <span class="usd">(US$132)</span></p>
           <ul>
-            <li>• Taj Mahal, Agra Red Fort, Mehtab Bagh, Mini Taj</li>
-            <li>• 4-star stay + meals + private car</li>
-            <li>• Dedicated trip manager till drop</li>
+            <li>• Taj Mahal + Agra Red Fort + Mehtab Bagh + Mini Taj</li>
+            <li>• 4-star stay + private driver + guide</li>
+            <li>• Dedicated trip manager</li>
           </ul>
-          <button class="btn btn-primary" onclick="payNow(10999, 'Royal Complete Agra (2 Days)')">Book & Pay</button>
+          <button class="btn btn-primary" type="button" onclick="payNow(10999, 'Royal Complete Agra (2 Days)')">Book & Pay</button>
         </article>
       </div>
     </div>
@@ -280,50 +259,53 @@
 
   <section id="monuments">
     <div class="container">
-      <div class="section-title">
-        <h2>Included Monuments (With Pictures)</h2>
-        <p>These are the real Agra monuments you can select in your custom booking below.</p>
+      <div class="title">
+        <h2>Monuments Included in Packages</h2>
+        <p>Customers can select any of these monuments in the booking form.</p>
       </div>
+
       <div class="grid-4">
         <article class="card monument-card">
-          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80" alt="Taj Mahal Agra">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80" alt="Taj Mahal Agra" />
           <h3>Taj Mahal</h3>
-          <p>World-famous marble monument and the heart of Agra tourism.</p>
+          <p>Iconic white marble mausoleum and primary attraction of Agra.</p>
         </article>
         <article class="card monument-card">
-          <img src="https://images.unsplash.com/photo-1587135941948-670b381f08ce?auto=format&fit=crop&w=1000&q=80" alt="Agra Red Fort">
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80" alt="Agra Red Fort" />
           <h3>Agra Red Fort</h3>
-          <p>UNESCO heritage fort with Mughal architecture and rich history.</p>
+          <p>UNESCO world heritage site showcasing grand Mughal architecture.</p>
         </article>
         <article class="card monument-card">
-          <img src="https://images.unsplash.com/photo-1599661046827-c75f8e4b9a2f?auto=format&fit=crop&w=1000&q=80" alt="Mehtab Bagh Agra">
+          <img src="https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1000&q=80" alt="Mehtab Bagh" />
           <h3>Mehtab Bagh</h3>
-          <p>Beautiful riverfront garden with iconic Taj Mahal sunset view.</p>
+          <p>Riverside garden with memorable sunset view of Taj Mahal.</p>
         </article>
         <article class="card monument-card">
-          <img src="https://images.unsplash.com/photo-1711850207146-9fe607a71055?auto=format&fit=crop&w=1000&q=80" alt="Mini Taj Itimad-ud-Daulah">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80" alt="Mini Taj Itimad ud Daulah" />
           <h3>Mini Taj (Itimad-ud-Daulah)</h3>
-          <p>Known as Baby Taj, perfect for architecture lovers and photos.</p>
+          <p>Elegant marble tomb often called the "Baby Taj".</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="booking" class="booking">
+  <section class="booking" id="booking">
     <div class="container booking-wrap">
-      <div>
-        <h2>Real Booking Flow: Choose Package → Choose Monument → Pay</h2>
-        <p>Fill details, select your package, select monuments, then pay securely. This gives a realistic and professional booking experience for your customers.</p>
-        <div class="description-box">
-          Every itinerary is customizable. If customer wants only selected monuments (for example Taj Mahal + Mini Taj), your team can confirm route and timing on WhatsApp after booking.
+      <div class="panel">
+        <h2>Choose Package → Choose Monuments → Booking → Payment</h2>
+        <p>This is a complete booking setup for your website. Customer submits booking details, selects monuments, and can immediately pay for selected package.</p>
+        <br />
+        <div class="about">
+          <strong>About Ali Tours India</strong>
+          <p>We provide verified local guides, clean vehicles, and full support from pickup to drop. After booking, our team shares exact itinerary timing, monument slots, and pickup coordination on WhatsApp.</p>
         </div>
       </div>
 
-      <div class="booking-card">
+      <div class="panel">
         <form id="bookingForm">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input name="name" type="text" placeholder="Your Name" required />
+          <input name="email" type="email" placeholder="Your Email" required />
+          <input name="phone" type="tel" placeholder="Phone Number" required />
 
           <select id="packageSelect" name="package" required>
             <option value="">Choose Package</option>
@@ -334,24 +316,22 @@
 
           <div>
             <strong>Choose Monuments</strong>
-            <div class="monuments-picker">
-              <label><input type="checkbox" name="monuments" value="Taj Mahal"> Taj Mahal</label>
-              <label><input type="checkbox" name="monuments" value="Agra Red Fort"> Agra Red Fort</label>
-              <label><input type="checkbox" name="monuments" value="Mehtab Bagh"> Mehtab Bagh</label>
-              <label><input type="checkbox" name="monuments" value="Mini Taj (Itimad-ud-Daulah)"> Mini Taj</label>
+            <div class="picker">
+              <label><input type="checkbox" name="monuments" value="Taj Mahal" /> Taj Mahal</label>
+              <label><input type="checkbox" name="monuments" value="Agra Red Fort" /> Agra Red Fort</label>
+              <label><input type="checkbox" name="monuments" value="Mehtab Bagh" /> Mehtab Bagh</label>
+              <label><input type="checkbox" name="monuments" value="Mini Taj (Itimad-ud-Daulah)" /> Mini Taj</label>
             </div>
+            <p id="monumentError" class="error">Please select at least one monument.</p>
           </div>
 
-          <textarea name="message" placeholder="Special request (pickup, language guide, kids/elder support)"></textarea>
+          <textarea name="message" placeholder="Special request (pickup time, language guide, family requirements)"></textarea>
 
-          <div class="booking-summary" id="bookingSummary">
-            Selected package price: <strong>₹0</strong>. Choose package to enable payment.
-          </div>
+          <div id="bookingSummary" class="summary">Selected package price: <strong>₹0</strong>. Choose package to enable payment.</div>
 
-          <button class="btn btn-primary" type="submit">Submit Booking</button>
-          <button class="btn btn-primary" id="paySelectedBtn" type="button">Pay for Selected Package</button>
-
-          <p style="font-size:.85rem;color:#cbd5e1;">Payment via Razorpay (UPI, Card, Net Banking, Wallet). Replace <code>YOUR_RAZORPAY_KEY</code> before production use.</p>
+          <button class="btn btn-primary" type="submit">Submit Booking Request</button>
+          <button id="paySelectedBtn" class="btn btn-primary" type="button">Pay for Selected Package</button>
+          <p style="font-size:.85rem;color:#cbd5e1;">Razorpay supports UPI, cards, wallets, and net banking. Replace <code>YOUR_RAZORPAY_KEY</code> before real transactions.</p>
         </form>
       </div>
     </div>
@@ -361,63 +341,130 @@
     © 2026 Ali Tours India • Agra, Uttar Pradesh • WhatsApp: +91 9286010430
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/919286010430?text=Hello%20I%20want%20Agra%20tour%20package%20details" aria-label="Chat on WhatsApp">💬</a>
+  <a class="whatsapp" href="https://wa.me/919286010430?text=Hello%20I%20want%20to%20book%20Agra%20tour%20package" aria-label="Chat on WhatsApp">💬</a>
 
   <script>
-    function payNow(amount, packageName) {
-      const options = {
-        key: 'YOUR_RAZORPAY_KEY',
-        amount: amount * 100,
-        currency: 'INR',
-        name: 'Ali Tours India',
-        description: packageName + ' Booking Payment',
-        handler: function (response) {
-          alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
-        },
-        theme: { color: '#f59e0b' }
-      };
-      const rzp = new Razorpay(options);
-      rzp.open();
+    function loadRazorpayScript() {
+      return new Promise(function (resolve, reject) {
+        if (window.Razorpay) {
+          resolve(true);
+          return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        script.onload = function () { resolve(true); };
+        script.onerror = function () { reject(new Error('Unable to load Razorpay checkout.')); };
+        document.body.appendChild(script);
+      });
     }
 
+    async function payNow(amount, packageName) {
+      if ('YOUR_RAZORPAY_KEY' === 'YOUR_RAZORPAY_KEY') {
+        alert('Please replace YOUR_RAZORPAY_KEY with your Razorpay live/test key first.');
+        return;
+      }
+
+      try {
+        await loadRazorpayScript();
+        const options = {
+          key: 'YOUR_RAZORPAY_KEY',
+          amount: amount * 100,
+          currency: 'INR',
+          name: 'Ali Tours India',
+          description: packageName + ' Booking Payment',
+          handler: function (response) {
+            alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+          },
+          theme: { color: '#f59e0b' }
+        };
+
+        const razorpay = new Razorpay(options);
+        razorpay.open();
+      } catch (error) {
+        alert(error.message || 'Payment gateway is temporarily unavailable.');
+      }
+    }
+
+    const bookingForm = document.getElementById('bookingForm');
     const packageSelect = document.getElementById('packageSelect');
     const paySelectedBtn = document.getElementById('paySelectedBtn');
     const bookingSummary = document.getElementById('bookingSummary');
+    const monumentError = document.getElementById('monumentError');
+
+    function selectedMonuments() {
+      return Array.from(document.querySelectorAll('input[name="monuments"]:checked')).map(function (item) {
+        return item.value;
+      });
+    }
 
     function updateSummary() {
       if (!packageSelect.value) {
         bookingSummary.innerHTML = 'Selected package price: <strong>₹0</strong>. Choose package to enable payment.';
         return;
       }
-      const [price, pkgName] = packageSelect.value.split('|');
-      const usd = Math.round(Number(price) / 83);
-      bookingSummary.innerHTML = 'Selected package: <strong>' + pkgName + '</strong><br>Price: <strong>₹' + Number(price).toLocaleString('en-IN') + ' (US$' + usd + ' approx)</strong>';
+
+      const parts = packageSelect.value.split('|');
+      const amount = Number(parts[0]);
+      const packageName = parts[1];
+      const usd = Math.round(amount / 83);
+
+      bookingSummary.innerHTML =
+        'Selected package: <strong>' + packageName + '</strong><br />' +
+        'Price: <strong>₹' + amount.toLocaleString('en-IN') + ' (US$' + usd + ' approx)</strong>';
+    }
+
+    function validateMonumentSelection() {
+      const hasMonuments = selectedMonuments().length > 0;
+      monumentError.style.display = hasMonuments ? 'none' : 'block';
+      return hasMonuments;
     }
 
     packageSelect.addEventListener('change', updateSummary);
+
+    document.querySelectorAll('input[name="monuments"]').forEach(function (input) {
+      input.addEventListener('change', validateMonumentSelection);
+    });
 
     paySelectedBtn.addEventListener('click', function () {
       if (!packageSelect.value) {
         alert('Please choose a package first.');
         return;
       }
-      const [price, pkgName] = packageSelect.value.split('|');
-      payNow(Number(price), pkgName);
-    });
 
-    document.getElementById('bookingForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      const data = new FormData(event.target);
-      const name = data.get('name');
-      const pkg = data.get('package') ? data.get('package').split('|')[1] : 'No package selected';
-      const monuments = data.getAll('monuments');
-      if (monuments.length === 0) {
-        alert('Please choose at least one monument.');
+      if (!validateMonumentSelection()) {
+        alert('Please choose at least one monument before payment.');
         return;
       }
-      alert('Thank you ' + name + '! Booking submitted for "' + pkg + '".\nSelected monuments: ' + monuments.join(', ') + '.\nOur team will contact you shortly.');
-      event.target.reset();
+
+      const parts = packageSelect.value.split('|');
+      const amount = Number(parts[0]);
+      const packageName = parts[1];
+      payNow(amount, packageName);
+    });
+
+    bookingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (!validateMonumentSelection()) {
+        return;
+      }
+
+      const formData = new FormData(bookingForm);
+      const name = formData.get('name');
+      const packageValue = formData.get('package');
+      const packageName = packageValue ? packageValue.split('|')[1] : 'No package selected';
+      const monuments = selectedMonuments();
+
+      alert(
+        'Thank you ' + name + '! Booking submitted for "' + packageName + '".\n' +
+        'Selected monuments: ' + monuments.join(', ') + '.\n' +
+        'Our team will contact you shortly on phone/WhatsApp.'
+      );
+
+      bookingForm.reset();
       updateSummary();
+      monumentError.style.display = 'none';
     });
   </script>
 </body>
